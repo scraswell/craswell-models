@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<hibernate-mapping
+  xmlns="urn:nhibernate-mapping-2.2"
+  assembly="Craswell.Models"
+  namespace="Craswell.Models.IdentityManagement" >
+  
+  <!--
+  SQLITE SCHEMA
+  CREATE TABLE `identities` (
+	  `id`	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+	  `title`	TEXT NOT NULL,
+	  `associated_resource`	TEXT NOT NULL,
+	  `username`	TEXT NOT NULL,
+	  `password`	TEXT NOT NULL,
+	  `description`	TEXT NOT NULL,
+	  `notes`	TEXT NOT NULL
+  );
+  -->
+  
+  <class name="Identity" table="identities" >
+    <id name="Id" column="id">
+      <generator class="native" />
+    </id>
+    <property name="Title" column="title" />
+    <property name="AssociatedResource" column="associated_resource" />
+    <property name="Username" column="username" />
+    <property name="Password" column="password" />
+    <property name="Description" column="description" />
+    <property name="Notes" column="notes" />
+  </class>
+
+</hibernate-mapping>
